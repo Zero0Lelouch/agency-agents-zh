@@ -24,17 +24,39 @@
 
 ## 快速开始
 
-### 方式一：配合 Claude Code 使用（推荐）
+### 方式一：一键安装到你的 AI 工具
+
+支持 **9 种主流 AI 编程工具**，一条命令搞定：
 
 ```bash
-# 复制智能体到 Claude Code 目录
-cp -r agency-agents-zh/* ~/.claude/agents/
+# 自动检测已安装的工具，一键安装
+./scripts/install.sh
+
+# 或指定安装到特定工具
+./scripts/install.sh --tool claude-code    # Claude Code
+./scripts/install.sh --tool copilot        # GitHub Copilot
+./scripts/install.sh --tool cursor         # Cursor
+./scripts/install.sh --tool openclaw       # OpenClaw
+./scripts/install.sh --tool opencode       # OpenCode
+./scripts/install.sh --tool aider          # Aider
+./scripts/install.sh --tool windsurf       # Windsurf
+./scripts/install.sh --tool antigravity    # Antigravity
+./scripts/install.sh --tool gemini-cli     # Gemini CLI
+```
+
+> 部分工具需要先运行 `./scripts/convert.sh` 转换格式，详见下方工具集成说明。
+
+### 方式二：手动复制
+
+```bash
+# Claude Code / GitHub Copilot（直接复制即可）
+cp -r marketing/*.md ~/.claude/agents/
 
 # 在 Claude Code 中激活：
 # "激活前端开发者模式，帮我构建一个 React 组件"
 ```
 
-### 方式二：作为提示词参考
+### 方式三：作为提示词参考
 
 浏览下方智能体列表，复制/改编你需要的内容！
 
@@ -313,6 +335,66 @@ cp -r agency-agents-zh/* ~/.claude/agents/
 | [交接模板](strategy/coordination/handoff-templates.md) | 智能体间的交接规范 |
 | Phase 0-6 Playbooks | [发现](strategy/playbooks/phase-0-discovery.md) · [策略](strategy/playbooks/phase-1-strategy.md) · [基础](strategy/playbooks/phase-2-foundation.md) · [构建](strategy/playbooks/phase-3-build.md) · [加固](strategy/playbooks/phase-4-hardening.md) · [上线](strategy/playbooks/phase-5-launch.md) · [运营](strategy/playbooks/phase-6-operate.md) |
 | 场景 Runbook | [创业 MVP](strategy/runbooks/scenario-startup-mvp.md) · [企业功能](strategy/runbooks/scenario-enterprise-feature.md) · [事故响应](strategy/runbooks/scenario-incident-response.md) · [营销活动](strategy/runbooks/scenario-marketing-campaign.md) |
+
+---
+
+## 工具集成
+
+支持 9 种主流 AI 编程工具，通过 `scripts/` 目录下的脚本实现格式转换和一键安装。
+
+### 支持的工具
+
+| 工具 | 安装位置 | 类型 |
+|------|----------|------|
+| **Claude Code** | `~/.claude/agents/` | 全局，直接复制 |
+| **GitHub Copilot** | `~/.github/agents/` | 全局，直接复制 |
+| **OpenClaw** | `~/.openclaw/agency-agents/` | 全局，需转换 |
+| **Antigravity** | `~/.gemini/antigravity/skills/` | 全局，需转换 |
+| **Gemini CLI** | `~/.gemini/extensions/agency-agents/` | 全局，需转换 |
+| **Cursor** | `.cursor/rules/` | 项目级，需转换 |
+| **OpenCode** | `.opencode/agents/` | 项目级，需转换 |
+| **Aider** | `CONVENTIONS.md` | 项目级，需转换 |
+| **Windsurf** | `.windsurfrules` | 项目级，需转换 |
+
+### 使用方法
+
+```bash
+# 第一步：转换格式（Claude Code 和 Copilot 可跳过此步）
+./scripts/convert.sh                    # 转换为所有工具格式
+./scripts/convert.sh --tool openclaw    # 只转换 OpenClaw 格式
+
+# 第二步：安装到本地
+./scripts/install.sh                    # 自动检测并安装
+./scripts/install.sh --tool openclaw    # 安装到指定工具
+
+# 检查智能体文件格式
+./scripts/lint-agents.sh
+```
+
+### OpenClaw 使用说明
+
+OpenClaw 会将每个智能体拆分为三个文件：
+- `SOUL.md` — 身份、记忆、沟通风格、关键规则
+- `AGENTS.md` — 核心使命、技术交付物、工作流程
+- `IDENTITY.md` — 名称与简介
+
+```bash
+# 转换 + 安装
+./scripts/convert.sh --tool openclaw
+./scripts/install.sh --tool openclaw
+
+# 安装后重启 OpenClaw 网关
+openclaw gateway restart
+```
+
+### 项目级工具（Cursor / OpenCode / Aider / Windsurf）
+
+这些工具的配置文件是项目级的，需要在目标项目根目录运行：
+
+```bash
+cd /your/project
+/path/to/agency-agents-zh/scripts/install.sh --tool cursor
+```
 
 ---
 
