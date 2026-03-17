@@ -14,13 +14,13 @@ Chinese community edition of [agency-agents](https://github.com/msitarzewski/age
 
 | 🤖 AI 智能體 | 🌏 英文版翻譯 | 🇨🇳 中國市場原創 | 🧠 支援工具 |
 |:---:|:---:|:---:|:---:|
-| **161** | **135** | **26** | **10 種** |
+| **176** | **135** | **41** | **10 種** |
 
 ---
 
 ## 這是什麼？
 
-**161 個即插即用的 AI 專家人格**——每個都有獨特的專業技能、溝通風格和可落地的工作流，不是通用模板。
+**176 個即插即用的 AI 專家人格**——每個都有獨特的專業技能、溝通風格和可落地的工作流，不是通用模板。
 
 ---
 
@@ -48,6 +48,20 @@ Chinese community edition of [agency-agents](https://github.com/msitarzewski/age
 ```
 
 > 部分工具需要先執行 `./scripts/convert.sh` 轉換格式，詳見下方工具整合說明。
+
+### 🔥 OpenClaw 使用者快速上手
+
+[OpenClaw](https://openclaw.com) 是目前最火的多智能體平臺，本專案完整支援：
+
+```bash
+# 一鍵轉換為 OpenClaw 格式（SOUL.md + AGENTS.md）
+./scripts/convert.sh --tool openclaw
+
+# 安裝到 OpenClaw
+./scripts/install.sh --tool openclaw
+```
+
+安裝後每個智能體會生成 `SOUL.md`（身份人設）+ `AGENTS.md`（業務能力）+ `IDENTITY.md`（簡介），直接在 OpenClaw 中使用。
 
 ### 方式二：手動複製
 
@@ -194,6 +208,44 @@ cp -r marketing/*.md ~/.claude/agents/
 | [Pipeline 分析師](sales/sales-pipeline-analyst.md) | 銷售漏斗、預測分析 | 銷售資料分析、預測 |
 | [投標策略師](sales/sales-proposal-strategist.md) | 投標方案、提案撰寫 | 招投標、方案競標 |
 
+### 💰 金融部
+
+讓每一筆錢都清清楚楚。
+
+| 智能體 | 專長 | 適用場景 |
+|--------|------|----------|
+| [財務預測分析師](finance/finance-financial-forecaster.md) ⭐ | 收入預測、場景建模、現金流 | SaaS 財務規劃、融資對接 |
+| [發票管理專家](finance/finance-invoice-manager.md) ⭐ | 增值稅發票、金稅系統、三單匹配 | 發票全生命週期管理 |
+| [金融風控分析師](finance/finance-fraud-detector.md) ⭐ | 交易風控、反洗錢、電信詐騙 | 支付風控、合規審查 |
+
+### 👔 人力資源部
+
+找對人、用好人、留住人。
+
+| 智能體 | 專長 | 適用場景 |
+|--------|------|----------|
+| [招聘專家](hr/hr-recruiter.md) ⭐ | Boss直聘/獵聘、校招社招、背調 | 招聘全流程管理 |
+| [績效管理專家](hr/hr-performance-reviewer.md) ⭐ | OKR/KPI、361分佈、晉升答辯 | 績效體系搭建與評估 |
+
+### ⚖️ 法務部
+
+合規是底線，風控是生命線。
+
+| 智能體 | 專長 | 適用場景 |
+|--------|------|----------|
+| [合同審查專家](legal/legal-contract-reviewer.md) ⭐ | 民法典合同編、電子簽章、風險評估 | 合同審查與風控 |
+| [制度檔案撰寫專家](legal/legal-policy-writer.md) ⭐ | PIPL/資料安全法、隱私政策 | 合規制度與政策撰寫 |
+
+### 🚚 供應鏈部
+
+從工廠到使用者，每一環都不掉鏈子。
+
+| 智能體 | 專長 | 適用場景 |
+|--------|------|----------|
+| [庫存預測專家](supply-chain/supply-chain-inventory-forecaster.md) ⭐ | 需求預測、安全庫存、618/雙11備貨 | 庫存管理與補貨最佳化 |
+| [供應商評估專家](supply-chain/supply-chain-vendor-evaluator.md) ⭐ | 1688供應商、驗廠、國標質檢 | 供應商准入與分級管理 |
+| [物流路線最佳化師](supply-chain/supply-chain-route-optimizer.md) ⭐ | 順豐/通達系、冷鏈、跨境物流 | 物流成本最佳化與路線規劃 |
+
 ### 📦 產品部
 
 在正確的時間做正確的事。
@@ -280,6 +332,10 @@ cp -r marketing/*.md ~/.claude/agents/
 | [Salesforce 架構師](specialized/specialized-salesforce-architect.md) | Salesforce 多雲設計、整合、資料模型 | 企業級 Salesforce 架構 |
 | [醫療健康營銷合規師](specialized/healthcare-marketing-compliance.md) ⭐ | 醫療廣告法、NMPA、網際網路醫療 | 醫療健康營銷合規 |
 | [高考志願填報顧問](specialized/gaokao-college-advisor.md) ⭐ | 平行志願、位次法、衝穩保策略 | 高考志願填報規劃 |
+| [動態定價策略師](specialized/specialized-pricing-optimizer.md) ⭐ | 淘寶/京東/拼多多定價、大促機制 | 電商定價與促銷策略 |
+| [AI 治理政策專家](specialized/specialized-ai-policy-writer.md) ⭐ | 演算法備案、生成式AI管理、倫理審查 | AI 合規與治理框架 |
+| [企業風險評估師](specialized/specialized-risk-assessor.md) ⭐ | COSO本土化、國企風控、ESG | 企業風險管理與審計 |
+| [會議效率專家](specialized/specialized-meeting-assistant.md) ⭐ | 飛書/釘釘/騰訊會議、OKR週會 | 會議管理與紀要輸出 |
 
 ### 🥽 空間計算部
 
@@ -359,6 +415,7 @@ cp -r marketing/*.md ~/.claude/agents/
 | [歷史學家](academic/academic-historian.md) | 歷史分析、史料考證 | 歷史題材驗證、年代設定 |
 | [敘事學家](academic/academic-narratologist.md) | 敘事理論、故事結構 | 劇情設計、角色弧線 |
 | [心理學家](academic/academic-psychologist.md) | 行為心理、人格理論 | 角色心理塑造、動機設計 |
+| [學習規劃師](academic/academic-study-planner.md) ⭐ | 考研/考公/法考備考、學習方法論 | 個性化學習計劃與備考規劃 |
 
 ### 🎯 戰略部
 
@@ -566,7 +623,7 @@ cd /your/project
 
 ## 🇨🇳 中國市場原創智能體
 
-除翻譯外，本專案包含 **26 個原創智能體**，專為中國平臺和業務場景打造。覆蓋小紅書、抖音、微信、B站、快手、飛書、百度等平臺，以及跨境電商、政務ToG、醫療合規等垂直領域。
+除翻譯外，本專案包含 **41 個原創智能體**，專為中國平臺和業務場景打造。覆蓋小紅書、抖音、微信、B站、快手、飛書、百度等平臺，以及跨境電商、政務ToG、醫療合規等垂直領域。
 
 > 在上方智能體陣容中標有 ⭐ 的即為原創智能體。
 

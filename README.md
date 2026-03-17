@@ -14,13 +14,13 @@ Chinese community edition of [agency-agents](https://github.com/msitarzewski/age
 
 | 🤖 AI 智能体 | 🌏 英文版翻译 | 🇨🇳 中国市场原创 | 🧠 支持工具 |
 |:---:|:---:|:---:|:---:|
-| **161** | **135** | **26** | **10 种** |
+| **176** | **135** | **41** | **10 种** |
 
 ---
 
 ## 这是什么？
 
-**161 个即插即用的 AI 专家人格**——每个都有独特的专业技能、沟通风格和可落地的工作流，不是通用模板。
+**176 个即插即用的 AI 专家人格**——每个都有独特的专业技能、沟通风格和可落地的工作流，不是通用模板。
 
 ---
 
@@ -48,6 +48,20 @@ Chinese community edition of [agency-agents](https://github.com/msitarzewski/age
 ```
 
 > 部分工具需要先运行 `./scripts/convert.sh` 转换格式，详见下方工具集成说明。
+
+### 🔥 OpenClaw 用户快速上手
+
+[OpenClaw](https://openclaw.com) 是目前最火的多智能体平台，本项目完整支持：
+
+```bash
+# 一键转换为 OpenClaw 格式（SOUL.md + AGENTS.md）
+./scripts/convert.sh --tool openclaw
+
+# 安装到 OpenClaw
+./scripts/install.sh --tool openclaw
+```
+
+安装后每个智能体会生成 `SOUL.md`（身份人设）+ `AGENTS.md`（业务能力）+ `IDENTITY.md`（简介），直接在 OpenClaw 中使用。
 
 ### 方式二：手动复制
 
@@ -194,6 +208,44 @@ cp -r marketing/*.md ~/.claude/agents/
 | [Pipeline 分析师](sales/sales-pipeline-analyst.md) | 销售漏斗、预测分析 | 销售数据分析、预测 |
 | [投标策略师](sales/sales-proposal-strategist.md) | 投标方案、提案撰写 | 招投标、方案竞标 |
 
+### 💰 金融部
+
+让每一笔钱都清清楚楚。
+
+| 智能体 | 专长 | 适用场景 |
+|--------|------|----------|
+| [财务预测分析师](finance/finance-financial-forecaster.md) ⭐ | 收入预测、场景建模、现金流 | SaaS 财务规划、融资对接 |
+| [发票管理专家](finance/finance-invoice-manager.md) ⭐ | 增值税发票、金税系统、三单匹配 | 发票全生命周期管理 |
+| [金融风控分析师](finance/finance-fraud-detector.md) ⭐ | 交易风控、反洗钱、电信诈骗 | 支付风控、合规审查 |
+
+### 👔 人力资源部
+
+找对人、用好人、留住人。
+
+| 智能体 | 专长 | 适用场景 |
+|--------|------|----------|
+| [招聘专家](hr/hr-recruiter.md) ⭐ | Boss直聘/猎聘、校招社招、背调 | 招聘全流程管理 |
+| [绩效管理专家](hr/hr-performance-reviewer.md) ⭐ | OKR/KPI、361分布、晋升答辩 | 绩效体系搭建与评估 |
+
+### ⚖️ 法务部
+
+合规是底线，风控是生命线。
+
+| 智能体 | 专长 | 适用场景 |
+|--------|------|----------|
+| [合同审查专家](legal/legal-contract-reviewer.md) ⭐ | 民法典合同编、电子签章、风险评估 | 合同审查与风控 |
+| [制度文件撰写专家](legal/legal-policy-writer.md) ⭐ | PIPL/数据安全法、隐私政策 | 合规制度与政策撰写 |
+
+### 🚚 供应链部
+
+从工厂到用户，每一环都不掉链子。
+
+| 智能体 | 专长 | 适用场景 |
+|--------|------|----------|
+| [库存预测专家](supply-chain/supply-chain-inventory-forecaster.md) ⭐ | 需求预测、安全库存、618/双11备货 | 库存管理与补货优化 |
+| [供应商评估专家](supply-chain/supply-chain-vendor-evaluator.md) ⭐ | 1688供应商、验厂、国标质检 | 供应商准入与分级管理 |
+| [物流路线优化师](supply-chain/supply-chain-route-optimizer.md) ⭐ | 顺丰/通达系、冷链、跨境物流 | 物流成本优化与路线规划 |
+
 ### 📦 产品部
 
 在正确的时间做正确的事。
@@ -280,6 +332,10 @@ cp -r marketing/*.md ~/.claude/agents/
 | [Salesforce 架构师](specialized/specialized-salesforce-architect.md) | Salesforce 多云设计、集成、数据模型 | 企业级 Salesforce 架构 |
 | [医疗健康营销合规师](specialized/healthcare-marketing-compliance.md) ⭐ | 医疗广告法、NMPA、互联网医疗 | 医疗健康营销合规 |
 | [高考志愿填报顾问](specialized/gaokao-college-advisor.md) ⭐ | 平行志愿、位次法、冲稳保策略 | 高考志愿填报规划 |
+| [动态定价策略师](specialized/specialized-pricing-optimizer.md) ⭐ | 淘宝/京东/拼多多定价、大促机制 | 电商定价与促销策略 |
+| [AI 治理政策专家](specialized/specialized-ai-policy-writer.md) ⭐ | 算法备案、生成式AI管理、伦理审查 | AI 合规与治理框架 |
+| [企业风险评估师](specialized/specialized-risk-assessor.md) ⭐ | COSO本土化、国企风控、ESG | 企业风险管理与审计 |
+| [会议效率专家](specialized/specialized-meeting-assistant.md) ⭐ | 飞书/钉钉/腾讯会议、OKR周会 | 会议管理与纪要输出 |
 
 ### 🥽 空间计算部
 
@@ -359,6 +415,7 @@ cp -r marketing/*.md ~/.claude/agents/
 | [历史学家](academic/academic-historian.md) | 历史分析、史料考证 | 历史题材验证、年代设定 |
 | [叙事学家](academic/academic-narratologist.md) | 叙事理论、故事结构 | 剧情设计、角色弧线 |
 | [心理学家](academic/academic-psychologist.md) | 行为心理、人格理论 | 角色心理塑造、动机设计 |
+| [学习规划师](academic/academic-study-planner.md) ⭐ | 考研/考公/法考备考、学习方法论 | 个性化学习计划与备考规划 |
 
 ### 🎯 战略部
 
@@ -566,7 +623,7 @@ cd /your/project
 
 ## 🇨🇳 中国市场原创智能体
 
-除翻译外，本项目包含 **26 个原创智能体**，专为中国平台和业务场景打造。覆盖小红书、抖音、微信、B站、快手、飞书、百度等平台，以及跨境电商、政务ToG、医疗合规等垂直领域。
+除翻译外，本项目包含 **41 个原创智能体**，专为中国平台和业务场景打造。覆盖小红书、抖音、微信、B站、快手、飞书、百度等平台，以及跨境电商、政务ToG、医疗合规等垂直领域。
 
 > 在上方智能体阵容中标有 ⭐ 的即为原创智能体。
 
