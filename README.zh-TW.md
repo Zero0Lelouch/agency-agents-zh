@@ -2,9 +2,9 @@
 
 🌐 [簡體中文](README.md) | **繁體中文** | [English (upstream)](https://github.com/msitarzewski/agency-agents)
 
-> **你的 AI 夢之隊** — 從前端開發到區塊鏈安全，從小紅書運營到抖音策略，每個智能體都是一位擁有獨特個性、專業流程和可交付成果的專家。
+> **187 個即插即用的 AI 專家角色** — 覆蓋工程、設計、行銷、產品、遊戲、安全、金融等 18 個部門。不是通用提示詞範本，每個智能體都有獨立的人設、專業流程和可交付成果。支援 Claude Code / Cursor / Copilot 等 14 種 AI 程式設計工具。
 
-Chinese community edition of [agency-agents](https://github.com/msitarzewski/agency-agents), including full translations and China-platform specific AI agents (Xiaohongshu, Douyin, WeChat, Bilibili, etc.).
+[agency-agents](https://github.com/msitarzewski/agency-agents) 的中文社群版。在完整翻譯上游的基礎上，新增了 46 個中國市場原創智能體（小紅書、抖音、微信、B站、飛書、釘釘等平台運營，以及跨境電商、政務ToG、醫療合規等垂直領域）。
 
 [![GitHub stars](https://img.shields.io/github/stars/jnMetaCode/agency-agents-zh?style=social)](https://github.com/jnMetaCode/agency-agents-zh)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -12,15 +12,15 @@ Chinese community edition of [agency-agents](https://github.com/msitarzewski/age
 
 ### 📊 專案規模
 
-| 🤖 AI 智能體 | 🌏 英文版翻譯 | 🇨🇳 中國市場原創 | 🧠 支援工具 |
-|:---:|:---:|:---:|:---:|
-| **186** | **142** | **44** | **14 種** |
+| 🤖 AI 智能體 | 🌏 英文版翻譯 | 🇨🇳 中國市場原創 | 🧠 支援工具 | 🏢 部門 |
+|:---:|:---:|:---:|:---:|:---:|
+| **187** | **141** | **46** | **14 種** | **18 個** |
 
 ---
 
 ## 這是什麼？
 
-**186 個即插即用的 AI 專家人格**——每個都有獨特的專業技能、溝通風格和可落地的工作流，不是通用模板。
+一套**開箱即用的 AI 角色庫**。每個智能體都有明確的身份定義、關鍵規則、工作流程和交付物，安裝到你的 AI 程式設計工具後用自然語言啟用。
 
 ---
 
@@ -35,12 +35,12 @@ Chinese community edition of [agency-agents](https://github.com/msitarzewski/age
 ./scripts/install.sh
 
 # 或指定安裝到特定工具
+./scripts/install.sh --tool openclaw       # OpenClaw ⭐ 推薦
 ./scripts/install.sh --tool claude-code    # Claude Code
 ./scripts/install.sh --tool copilot        # GitHub Copilot
 ./scripts/install.sh --tool cursor         # Cursor
 ./scripts/install.sh --tool kiro           # Kiro (Amazon)
 ./scripts/install.sh --tool trae           # Trae
-./scripts/install.sh --tool openclaw       # OpenClaw
 ./scripts/install.sh --tool opencode       # OpenCode
 ./scripts/install.sh --tool aider          # Aider
 ./scripts/install.sh --tool windsurf       # Windsurf
@@ -55,14 +55,14 @@ Chinese community edition of [agency-agents](https://github.com/msitarzewski/age
 
 ### 🔥 OpenClaw 使用者快速上手
 
-OpenClaw 需要先轉換格式再安裝（上方方式一僅安裝，這裡是完整兩步）：
+OpenClaw 是目前社群使用者最多的整合方式，每個智能體會拆分為三個檔案：`SOUL.md`（身份人設）+ `AGENTS.md`（業務能力）+ `IDENTITY.md`（簡介），天然支援多智能體協作編排。
 
 ```bash
 ./scripts/convert.sh --tool openclaw   # 第一步：轉換為 SOUL.md 格式
 ./scripts/install.sh --tool openclaw   # 第二步：安裝到 ~/.openclaw/
 ```
 
-每個智能體會生成三個檔案：`SOUL.md`（身份人設）+ `AGENTS.md`（業務能力）+ `IDENTITY.md`（簡介），支援多智能體協作編排。
+安裝後重啟 OpenClaw 閘道器即可使用。
 
 ### 方式二：手動複製
 
@@ -446,10 +446,10 @@ cp -r marketing/*.md ~/.claude/agents/
 
 | 工具 | 安裝位置 | 型別 |
 |------|----------|------|
+| **OpenClaw** ⭐ | `~/.openclaw/agency-agents/` | 全域性，需轉換 |
 | **Claude Code** | `~/.claude/agents/` | 全域性，直接複製 |
 | **GitHub Copilot** | `~/.github/agents/` + `~/.copilot/agents/` | 全域性，直接複製 |
 | **Kiro** (Amazon) | `~/.kiro/agents/` | 全域性，需轉換 |
-| **OpenClaw** | `~/.openclaw/agency-agents/` | 全域性，需轉換 |
 | **Antigravity** | `~/.gemini/antigravity/skills/` | 全域性，需轉換 |
 | **Gemini CLI** | `~/.gemini/extensions/agency-agents/` | 全域性，需轉換 |
 | **Qwen Code** | `.qwen/agents/` | 專案級，需轉換 |
@@ -478,6 +478,23 @@ cp -r marketing/*.md ~/.claude/agents/
 
 ### 各工具安裝說明
 
+<details open>
+<summary><strong>⭐ OpenClaw（推薦）</strong></summary>
+
+OpenClaw 會將每個智能體拆分為三個檔案，天然支援多智能體協作：
+- `SOUL.md` — 身份、記憶、溝通風格、關鍵規則
+- `AGENTS.md` — 核心使命、技術交付物、工作流程
+- `IDENTITY.md` — 名稱與簡介
+
+```bash
+./scripts/convert.sh --tool openclaw
+./scripts/install.sh --tool openclaw
+
+# 安裝後重啟 OpenClaw 閘道器
+openclaw gateway restart
+```
+</details>
+
 <details>
 <summary><strong>Claude Code</strong></summary>
 
@@ -505,23 +522,6 @@ cp -r marketing/*.md ~/.claude/agents/
 在 GitHub Copilot 中啟用：
 ```
 使用前端開發者智能體幫我審查這個元件。
-```
-</details>
-
-<details>
-<summary><strong>OpenClaw</strong></summary>
-
-OpenClaw 會將每個智能體拆分為三個檔案：
-- `SOUL.md` — 身份、記憶、溝通風格、關鍵規則
-- `AGENTS.md` — 核心使命、技術交付物、工作流程
-- `IDENTITY.md` — 名稱與簡介
-
-```bash
-./scripts/convert.sh --tool openclaw
-./scripts/install.sh --tool openclaw
-
-# 安裝後重啟 OpenClaw 閘道器
-openclaw gateway restart
 ```
 </details>
 
@@ -734,7 +734,12 @@ DEERFLOW_SKILLS_DIR=/path/to/deerflow/skills/custom ./scripts/install.sh --tool 
 
 ## 🇨🇳 中國市場原創智能體
 
-除翻譯外，本專案包含 **41 個原創智能體**，專為中國平臺和業務場景打造。覆蓋小紅書、抖音、微信、B站、快手、飛書、百度等平臺，以及跨境電商、政務ToG、醫療合規等垂直領域。
+除翻譯外，本專案包含 **46 個原創智能體**，專為中國平臺和業務場景打造：
+
+- **平臺運營**：小紅書、抖音、微信公眾號/視頻號/小程序、B站、快手、微博、知乎
+- **企業協作**：飛書、釘釘整合開發
+- **垂直領域**：跨境電商、政務ToG、醫療合規、高考志願、留學規劃
+- **業務支撐**：私域流量、直播電商、庫存預測、合約審查、發票管理
 
 > 在上方智能體陣容中標有 ⭐ 的即為原創智能體。
 

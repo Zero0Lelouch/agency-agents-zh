@@ -2,9 +2,9 @@
 
 🌐 **简体中文** | [繁體中文](README.zh-TW.md) | [English (upstream)](https://github.com/msitarzewski/agency-agents)
 
-> **你的 AI 梦之队** — 从前端开发到区块链安全，从小红书运营到抖音策略，每个智能体都是一位拥有独特个性、专业流程和可交付成果的专家。
+> **187 个即插即用的 AI 专家角色** — 覆盖工程、设计、营销、产品、游戏、安全、金融等 18 个部门。不是通用提示词模板，每个智能体都有独立的人设、专业流程和可交付成果。支持 Claude Code / Cursor / Copilot 等 14 种 AI 编程工具。
 
-Chinese community edition of [agency-agents](https://github.com/msitarzewski/agency-agents), including full translations and China-platform specific AI agents (Xiaohongshu, Douyin, WeChat, Bilibili, etc.).
+[agency-agents](https://github.com/msitarzewski/agency-agents) 的中文社区版。在完整翻译上游的基础上，新增了 46 个中国市场原创智能体（小红书、抖音、微信、B站、飞书、钉钉等平台运营，以及跨境电商、政务ToG、医疗合规等垂直领域）。
 
 [![GitHub stars](https://img.shields.io/github/stars/jnMetaCode/agency-agents-zh?style=social)](https://github.com/jnMetaCode/agency-agents-zh)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -13,15 +13,17 @@ Chinese community edition of [agency-agents](https://github.com/msitarzewski/age
 
 ### 📊 项目规模
 
-| 🤖 AI 智能体 | 🌏 英文版翻译 | 🇨🇳 中国市场原创 | 🧠 支持工具 |
-|:---:|:---:|:---:|:---:|
-| **186** | **142** | **44** | **14 种** |
+| 🤖 AI 智能体 | 🌏 英文版翻译 | 🇨🇳 中国市场原创 | 🧠 支持工具 | 🏢 部门 |
+|:---:|:---:|:---:|:---:|:---:|
+| **187** | **141** | **46** | **14 种** | **18 个** |
 
 ---
 
 ## 这是什么？
 
-**186 个即插即用的 AI 专家人格**——每个都有独特的专业技能、沟通风格和可落地的工作流，不是通用模板。
+一套**开箱即用的 AI 角色库**。每个智能体都有明确的身份定义、关键规则、工作流程和交付物，安装到你的 AI 编程工具后用自然语言激活。
+
+**和普通提示词的区别**：普通提示词告诉 AI "你是一个专家"；这里的智能体定义了专家**怎么思考、怎么做事、交付什么**。例如[安全工程师](engineering/engineering-security-engineer.md)会按 OWASP Top 10 逐项审查代码，[小红书运营](marketing/marketing-xiaohongshu-operator.md)会输出完整的种草笔记策略和达人合作方案。
 
 ### 🤝 多智能体协作
 
@@ -38,7 +40,7 @@ npx ao run workflows/story-creation.yaml --input premise='你的创意'
            (自动并行)
 ```
 
-支持 DeepSeek / Claude / OpenAI / Ollama，零代码，写 YAML 就能编排 186 个角色。[了解更多 →](https://github.com/jnMetaCode/agency-orchestrator)
+支持 DeepSeek / Claude / OpenAI / Ollama，零代码，写 YAML 就能编排角色协作。[了解更多 →](https://github.com/jnMetaCode/agency-orchestrator)
 
 ---
 
@@ -53,12 +55,12 @@ npx ao run workflows/story-creation.yaml --input premise='你的创意'
 ./scripts/install.sh
 
 # 或指定安装到特定工具
+./scripts/install.sh --tool openclaw       # OpenClaw ⭐ 推荐
 ./scripts/install.sh --tool claude-code    # Claude Code
 ./scripts/install.sh --tool copilot        # GitHub Copilot
 ./scripts/install.sh --tool cursor         # Cursor
 ./scripts/install.sh --tool kiro           # Kiro (Amazon)
 ./scripts/install.sh --tool trae           # Trae
-./scripts/install.sh --tool openclaw       # OpenClaw
 ./scripts/install.sh --tool opencode       # OpenCode
 ./scripts/install.sh --tool aider          # Aider
 ./scripts/install.sh --tool windsurf       # Windsurf
@@ -73,14 +75,14 @@ npx ao run workflows/story-creation.yaml --input premise='你的创意'
 
 ### 🔥 OpenClaw 用户快速上手
 
-OpenClaw 需要先转换格式再安装（上方方式一仅安装，这里是完整两步）：
+OpenClaw 是目前社区用户最多的集成方式，每个智能体会拆分为三个文件：`SOUL.md`（身份人设）+ `AGENTS.md`（业务能力）+ `IDENTITY.md`（简介），天然支持多智能体协作编排。
 
 ```bash
 ./scripts/convert.sh --tool openclaw   # 第一步：转换为 SOUL.md 格式
 ./scripts/install.sh --tool openclaw   # 第二步：安装到 ~/.openclaw/
 ```
 
-每个智能体会生成三个文件：`SOUL.md`（身份人设）+ `AGENTS.md`（业务能力）+ `IDENTITY.md`（简介），支持多智能体协作编排。
+安装后重启 OpenClaw 网关即可使用。
 
 ### 方式二：手动复制
 
@@ -464,10 +466,10 @@ cp -r marketing/*.md ~/.claude/agents/
 
 | 工具 | 安装位置 | 类型 |
 |------|----------|------|
+| **OpenClaw** ⭐ | `~/.openclaw/agency-agents/` | 全局，需转换 |
 | **Claude Code** | `~/.claude/agents/` | 全局，直接复制 |
 | **GitHub Copilot** | `~/.github/agents/` + `~/.copilot/agents/` | 全局，直接复制 |
 | **Kiro** (Amazon) | `~/.kiro/agents/` | 全局，需转换 |
-| **OpenClaw** | `~/.openclaw/agency-agents/` | 全局，需转换 |
 | **Antigravity** | `~/.gemini/antigravity/skills/` | 全局，需转换 |
 | **Gemini CLI** | `~/.gemini/extensions/agency-agents/` | 全局，需转换 |
 | **Qwen Code** | `.qwen/agents/` | 项目级，需转换 |
@@ -496,6 +498,23 @@ cp -r marketing/*.md ~/.claude/agents/
 
 ### 各工具安装说明
 
+<details open>
+<summary><strong>⭐ OpenClaw（推荐）</strong></summary>
+
+OpenClaw 会将每个智能体拆分为三个文件，天然支持多智能体协作：
+- `SOUL.md` — 身份、记忆、沟通风格、关键规则
+- `AGENTS.md` — 核心使命、技术交付物、工作流程
+- `IDENTITY.md` — 名称与简介
+
+```bash
+./scripts/convert.sh --tool openclaw
+./scripts/install.sh --tool openclaw
+
+# 安装后重启 OpenClaw 网关
+openclaw gateway restart
+```
+</details>
+
 <details>
 <summary><strong>Claude Code</strong></summary>
 
@@ -523,23 +542,6 @@ cp -r marketing/*.md ~/.claude/agents/
 在 GitHub Copilot 中激活：
 ```
 使用前端开发者智能体帮我审查这个组件。
-```
-</details>
-
-<details>
-<summary><strong>OpenClaw</strong></summary>
-
-OpenClaw 会将每个智能体拆分为三个文件：
-- `SOUL.md` — 身份、记忆、沟通风格、关键规则
-- `AGENTS.md` — 核心使命、技术交付物、工作流程
-- `IDENTITY.md` — 名称与简介
-
-```bash
-./scripts/convert.sh --tool openclaw
-./scripts/install.sh --tool openclaw
-
-# 安装后重启 OpenClaw 网关
-openclaw gateway restart
 ```
 </details>
 
@@ -752,7 +754,12 @@ DEERFLOW_SKILLS_DIR=/path/to/deerflow/skills/custom ./scripts/install.sh --tool 
 
 ## 🇨🇳 中国市场原创智能体
 
-除翻译外，本项目包含 **41 个原创智能体**，专为中国平台和业务场景打造。覆盖小红书、抖音、微信、B站、快手、飞书、百度等平台，以及跨境电商、政务ToG、医疗合规等垂直领域。
+除翻译外，本项目包含 **46 个原创智能体**，专为中国平台和业务场景打造：
+
+- **平台运营**：小红书、抖音、微信公众号/视频号/小程序、B站、快手、微博、知乎
+- **企业协作**：飞书、钉钉集成开发
+- **垂直领域**：跨境电商、政务ToG、医疗合规、高考志愿、留学规划
+- **业务支撑**：私域流量、直播电商、库存预测、合同审查、发票管理
 
 > 在上方智能体阵容中标有 ⭐ 的即为原创智能体。
 
@@ -821,9 +828,9 @@ MIT License — 自由使用，商业或个人均可。
 
 <div align="center">
 
-**AI 智能体专家团队：你的 AI 梦之队**
+**187 个 AI 专家角色，14 种工具支持，即装即用**
 
-[Star 本项目](https://github.com/jnMetaCode/agency-agents-zh) · [提交 Issue](https://github.com/jnMetaCode/agency-agents-zh/issues) · [贡献代码](https://github.com/jnMetaCode/agency-agents-zh/pulls)
+[⭐ Star 本项目](https://github.com/jnMetaCode/agency-agents-zh) · [提交 Issue](https://github.com/jnMetaCode/agency-agents-zh/issues) · [贡献代码](https://github.com/jnMetaCode/agency-agents-zh/pulls) · [QQ 交流群](https://qm.qq.com/q/x8kyqzlfDc)
 
 基于 [agency-agents](https://github.com/msitarzewski/agency-agents) 翻译并本土化
 
