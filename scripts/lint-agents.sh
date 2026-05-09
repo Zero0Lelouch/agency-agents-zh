@@ -33,7 +33,12 @@ AGENT_DIRS=(
 )
 
 REQUIRED_FRONTMATTER=("name" "description" "color" "emoji")
-RECOMMENDED_SECTIONS=("身份" "核心使命" "关键规则" "Identity" "Core Mission" "Critical Rules")
+# 中英文任一即可——本仓库以中文为主，英文版用于上游同步
+RECOMMENDED_SECTION_PATTERNS=(
+  "身份|记忆|Identity"
+  "核心使命|Core Mission"
+  "关键规则|Critical Rules"
+)
 
 errors=0
 warnings=0
@@ -99,9 +104,9 @@ lint_file() {
   local body
   body=$(awk 'BEGIN{n=0} /^---$/{n++; next} n>=2{print}' "$file")
 
-  for section in "${RECOMMENDED_SECTIONS[@]}"; do
-    if ! echo "$body" | grep -qi "$section"; then
-      echo "WARN  $file: 缺少推荐章节 '${section}'"
+  for pattern in "${RECOMMENDED_SECTION_PATTERNS[@]}"; do
+    if ! echo "$body" | grep -qiE "$pattern"; then
+      echo "WARN  $file: 缺少推荐章节 (匹配: ${pattern})"
       warnings=$((warnings + 1))
     fi
   done
