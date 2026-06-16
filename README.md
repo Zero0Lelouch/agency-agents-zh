@@ -80,6 +80,19 @@ ao compose "帮我写一篇关于 AI Agent 的深度分析文章" --run
 
 ---
 
+## 🖼️ 在线浏览全部专家（无需安装）
+
+搜索 / 按部门筛选 / 查看与**复制每位专家的完整提示词** —— 全部 216 位，直接在浏览器里看：
+
+<p align="center">
+  <a href="https://ao.aiolaola.com/experts">
+    <img src="assets/experts-gallery.png" alt="agency-agents 专家库在线浏览" width="640"><br/>
+    <strong>🔗 在线专家库 ao.aiolaola.com/experts →</strong>
+  </a>
+</p>
+
+---
+
 ## 这是什么？
 
 一套**开箱即用的 AI 角色库**。每个智能体都有明确的身份定义、关键规则、工作流程和交付物，安装到你的 AI 编程工具后用自然语言激活。
