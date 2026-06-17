@@ -252,7 +252,7 @@
 | 组织心理学家 | `specialized/organizational-psychologist.md` |
 | 个人成长导师 | `specialized/personal-growth-mentor.md` |
 | 定价分析师 | `specialized/specialized-pricing-analyst.md` |
-| 策略对决 | `specialized/specialized-strategy-duel-agent.md` |
+| 策略对决推演师 | `specialized/specialized-strategy-duel-agent.md` |
 | 应付账款智能体 | `specialized/accounts-payable-agent.md` |
 | 身份信任架构师 | `specialized/agentic-identity-trust.md` |
 | 智能体编排者 | `specialized/agents-orchestrator.md` |

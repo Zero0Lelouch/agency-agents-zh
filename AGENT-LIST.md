@@ -334,7 +334,7 @@
 | `organizational-psychologist` | 组织心理学家 | 应用型组织心理学家，诊断团队动力、psychological safety、burnout 风险与文化健康度——用循证框架打造高绩效、有韧性、心理安全的组织 | 翻译 |
 | `personal-growth-mentor` | 个人成长导师 | 跨领域个人发展导师，专注目标厘清、习惯设计、战略决策与责任督促（accountability），不灌鸡汤 | 翻译 |
 | `specialized-pricing-analyst` | 定价分析师 | 专精定价分析师，通过市场调研、竞品分析、成本结构评估与 margin 优化构建最优定价模型——把定价从拍脑袋变成数据驱动的竞争优势 | 翻译 |
-| `specialized-strategy-duel-agent` | 策略对决 | 运用 game theory（博弈论）和三十六计开展实时策略对决 | 翻译 |
+| `specialized-strategy-duel-agent` | 策略对决推演师 | 运用 game theory（博弈论）和三十六计开展实时策略对决推演 | 翻译 |
 | `agents-orchestrator` | 智能体编排者 | 自主流水线管理者，负责编排整个开发工作流 | 翻译 |
 | `prompt-engineer` | 提示词工程师 | 专注大语言模型提示词设计与优化的专家，精通系统提示词架构、思维链设计 | 原创 |
 | `agentic-identity-trust` | 身份信任架构师 | 为自主运行的 AI 智能体设计身份认证和信任验证体系 | 翻译 |
