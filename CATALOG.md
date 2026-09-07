@@ -142,7 +142,7 @@
 | PR 与传播经理 | `marketing/marketing-pr-communications-manager.md` |
 | X/Twitter 情报分析师 | `marketing/marketing-x-twitter-intelligence-analyst.md` |
 | 智能搜索优化师 | `marketing/marketing-agentic-search-optimizer.md` |
-| AI 引文策略师 | `marketing/marketing-ai-citation-strategist.md` |
+| AI 搜索可见性与 GEO 策略师 | `marketing/marketing-ai-citation-strategist.md` |
 | 应用商店优化师 | `marketing/marketing-app-store-optimizer.md` |
 | 百度 SEO 专家 | `marketing/marketing-baidu-seo-specialist.md` |
 | B站内容策略师 | `marketing/marketing-bilibili-strategist.md` |
@@ -164,7 +164,8 @@
 | 播客内容策略师 | `marketing/marketing-podcast-strategist.md` |
 | 私域流量运营师 | `marketing/marketing-private-domain-operator.md` |
 | Reddit 社区运营 | `marketing/marketing-reddit-community-builder.md` |
-| SEO专家 | `marketing/marketing-seo-specialist.md` |
+| SEO 与自然搜索增长专家 | `marketing/marketing-seo-specialist.md` |
+| 搜索增长编排器 | `marketing/marketing-search-growth-orchestrator.md` |
 | 短视频剪辑指导师 | `marketing/marketing-short-video-editing-coach.md` |
 | 社交媒体策略师 | `marketing/marketing-social-media-strategist.md` |
 | TikTok 策略师 | `marketing/marketing-tiktok-strategist.md` |
