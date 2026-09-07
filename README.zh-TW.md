@@ -2,7 +2,7 @@
 
 🌐 [簡體中文](README.md) | **繁體中文** | [English (upstream)](https://github.com/msitarzewski/agency-agents)
 
-> **277 個即插即用的 AI 專家角色** — 覆蓋公司經營（CEO/CTO/CMO/COO/CPO/CFO）、工程、設計、營銷、產品、遊戲、安全、GIS、金融等 20 個部門。不是通用提示詞模板，每個智能體都有獨立的人設、專業流程和可交付成果。支援 Claude Code / Cursor / Copilot 等 18 種 AI 程式設計工具。
+> **277 個即插即用的 AI 專家角色** — 覆蓋公司經營（CEO/CTO/CMO/COO/CPO/CFO）、工程、設計、營銷、產品、遊戲、安全、GIS、金融等 20 個部門。不是通用提示詞模板，每個智能體都有獨立的人設、專業流程和可交付成果。支援 Claude Code / Cursor / Copilot 等 20 種 AI 程式設計工具。
 
 [agency-agents](https://github.com/msitarzewski/agency-agents) 的中文社群版。在完整翻譯上游的基礎上，新增了 63 箇中國市場原創智能體（小紅書、抖音、微信、B站、飛書、釘釘等平臺運營，以及跨境電商、政務ToG、醫療合規、Qt 工業上位機、機械設計、畜禽養殖檔案核對等垂直領域）。
 
@@ -20,7 +20,7 @@
 
 | 🤖 AI 智能體 | 🌏 英文版翻譯 | 🇨🇳 中國市場原創 | 🧠 支援工具 | 🏢 部門 |
 |:---:|:---:|:---:|:---:|:---:|
-| **277** | **213** | **64** | **18 種** | **20 個** |
+| **277** | **213** | **64** | **20 種** | **20 個** |
 
 > 📖 **官方配套課程** → [AI 專家團隊實戰](https://aiolaola.com/course/ai-agency?utm_source=github&utm_campaign=agents)（33 節，免費）：手把手把這倉 277 位專家用成一支團隊——單兵點名、自動組隊、一人公司全流程，桌面端零程式碼教學。另有 [從零學會 AI 程式設計](https://aiolaola.com/?utm_source=github&utm_campaign=agents)（180 節）＋ [從零構建 AI 智能體](https://aiolaola.com/course/ai-agent?utm_source=github&utm_campaign=agents)（40 節）
 >
@@ -205,7 +205,7 @@ ao compose "幫我寫一篇關於 AI Agent 的深度分析文章" --run
 
 ### 方式一：一鍵安裝到你的 AI 工具
 
-支援 **18 種主流 AI 程式設計工具**，一條命令搞定：
+支援 **20 種主流 AI 程式設計工具**，一條命令搞定：
 
 ```bash
 # 自動檢測已安裝的工具，一鍵安裝
@@ -224,6 +224,8 @@ ao compose "幫我寫一篇關於 AI Agent 的深度分析文章" --run
 ./scripts/install.sh --tool antigravity    # Antigravity
 ./scripts/install.sh --tool gemini-cli     # Gemini CLI
 ./scripts/install.sh --tool qwen           # Qwen Code
+./scripts/install.sh --tool zcode          # ZCode (智譜)
+./scripts/install.sh --tool qwenpaw        # QwenPaw (阿里)
 ./scripts/install.sh --tool codex          # Codex CLI
 ./scripts/install.sh --tool deerflow       # DeerFlow 2.0 (ByteDance)
 ./scripts/install.sh --tool workbuddy      # WorkBuddy (Tencent)
@@ -656,7 +658,7 @@ cp -r marketing/*.md ~/.claude/agents/
 
 ## 工具整合
 
-支援 **18 種主流 AI 程式設計工具**，透過 `scripts/` 目錄下的指令碼實現格式轉換和一鍵安裝。
+支援 **20 種主流 AI 程式設計工具**，透過 `scripts/` 目錄下的指令碼實現格式轉換和一鍵安裝。
 
 ### 支援的工具
 
@@ -680,6 +682,8 @@ cp -r marketing/*.md ~/.claude/agents/
 | **Hermes Agent** (NousResearch) | `~/.hermes/skills/` | 全域性，需轉換 |
 | **DeerFlow 2.0** (字節跳動) | `skills/custom/` | 專案級，需轉換 |
 | **Qoder** | `~/.qoder/agents/` 或 `.qoder/agents/` | 全域性/專案級，需轉換 |
+| **ZCode** (智譜) | `~/.zcode/agents/` | 全域性，需轉換 |
+| **QwenPaw** (阿里) | `~/.qwenpaw/skill_pool/` | 全域性，需轉換 |
 
 ### 使用方法
 
@@ -935,6 +939,36 @@ kiro-cli --agent engineering-frontend-developer
 </details>
 
 <details>
+<summary><strong>ZCode (智譜)</strong></summary>
+
+智譜推出的 ADE 桌面端程式設計 Agent，跑 GLM 系列模型。自定義 subagent 就是帶 YAML frontmatter 的 Markdown，跟本倉角色格式一致，轉換後安裝到 `~/.zcode/agents/`（全域性）。
+
+```bash
+./scripts/convert.sh --tool zcode
+./scripts/install.sh --tool zcode
+```
+
+在對話方塊裡用 `@` 引用子智能體，或讓 ZCode 自動選擇。編輯定義檔案後需要新開會話——執行中的會話不會熱過載。
+
+工作區級安裝可以把檔案放到 `<workspace>/.zcode/agents/`。
+</details>
+
+<details>
+<summary><strong>QwenPaw (阿里)</strong></summary>
+
+阿里 AgentScope 團隊的個人 AI 助手平臺，支援本地或雲端部署。每個智能體轉換為 `SKILL.md` 技能檔案，安裝到技能池 `~/.qwenpaw/skill_pool/`（全域性）。
+
+```bash
+./scripts/convert.sh --tool qwenpaw
+./scripts/install.sh --tool qwenpaw
+```
+
+注意 QwenPaw 的兩層結構：**技能池不會直接執行**，手動放入的 skill 會以「停用」狀態寫入 `skill.json`，需要在控制檯啟用後廣播到工作區。
+
+如果不想把檔案複製進主池，也可以在 `~/.qwenpaw/config.json` 的頂層欄位 `skill_paths` 裡登記本倉的 `integrations/qwenpaw` 作為**外部技能根目錄**——QwenPaw 會原地讀取、不寫入 manifest，倉庫更新後重新載入即可生效。
+</details>
+
+<details>
 <summary><strong>WorkBuddy (騰訊)</strong></summary>
 
 騰訊推出的全場景 AI 桌面智能體，相容 OpenClaw 技能，支援多模型切換。每個智能體轉換為 `SKILL.md` 技能檔案，安裝到 `~/.workbuddy/skills/`（全域性）。
@@ -1132,7 +1166,7 @@ MIT License — 自由使用，商業或個人均可。
 
 <div align="center">
 
-**277 個 AI 專家角色，18 種工具支援，即裝即用**
+**277 個 AI 專家角色，20 種工具支援，即裝即用**
 
 [⭐ Star 本專案](https://github.com/jnMetaCode/agency-agents-zh) · [提交 Issue](https://github.com/jnMetaCode/agency-agents-zh/issues) · [貢獻程式碼](https://github.com/jnMetaCode/agency-agents-zh/pulls)
 
