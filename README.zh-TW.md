@@ -392,6 +392,8 @@ cp -r marketing/*.md ~/.claude/agents/
 | [AI 搜尋可見性與 GEO 策略師](marketing/marketing-ai-citation-strategist.md) | AEO/GEO 最佳化、AI 平臺可見性審計 | AI 搜尋引擎品牌可見性 |
 | [搜尋增長編排器](marketing/marketing-search-growth-orchestrator.md) ⭐ | AEO/SEO/GEO/Agentic 四層路由與統一路線圖 | 搜尋增長專案總協調 |
 
+> 🔍 搞不清 SEO / GEO / AEO / Agentic Search 該找誰？看 [Search Growth Stack](SEARCH-GROWTH-STACK.md) —— 五個搜尋相關角色的職責邊界與選人指南。
+
 ### 💰 付費媒體部
 
 精準投放，每一分預算都花在刀刃上。
