@@ -1141,13 +1141,14 @@ DEERFLOW_SKILLS_DIR=/path/to/deerflow/skills/custom ./scripts/install.sh --tool 
 | 專案 | 定位 | 一句話 |
 |------|------|-------|
 | **本專案**（agency-agents-zh） ![](https://img.shields.io/github/stars/jnMetaCode/agency-agents-zh?style=flat&label=⭐) | 🎭 專家角色庫 | 277 個**即插即用** AI 專家，含 64 中國原創（小紅書 / 抖音 / 飛書 / 釘釘 / Qt 上位機 / 機械設計） |
-| [agency-orchestrator](https://github.com/jnMetaCode/agency-orchestrator) | 🚀 編排引擎 | 一句話 → 268 專家協作，**幾分鐘出方案**（10 家 LLM / 7 免費） |
+| [agency-orchestrator](https://github.com/jnMetaCode/agency-orchestrator) ![](https://img.shields.io/github/stars/jnMetaCode/agency-orchestrator?style=flat&label=%E2%AD%90) | 🚀 編排引擎 | 一句話 → 276 專家協作，**幾分鐘出方案**（15 種大模型 / 11 種免 key） |
 | [superpowers-zh](https://github.com/jnMetaCode/superpowers-zh) ![](https://img.shields.io/github/stars/jnMetaCode/superpowers-zh?style=flat&label=⭐) | 🧠 工作方法論 | 20 個 skills 教 AI 怎麼幹活（TDD / 除錯 / 程式碼審查等） |
-| [ai-coding-guide](https://github.com/jnMetaCode/ai-coding-guide) | 📖 實戰教程 | 66 個 Claude Code 技巧 + 9 款工具最佳實踐 + 配置模板 |
+| [ai-coding-guide](https://github.com/jnMetaCode/ai-coding-guide) | 📖 實戰教程 | 66 個 Claude Code 技巧 + 10 款工具最佳實踐 + 配置模板 |
 | [shellward](https://github.com/jnMetaCode/shellward) | 🛡️ 安全中介軟體 | 8 層防禦 + DLP 資料流 + 注入檢測，**零依賴**（含 MCP Server） |
 | 🆕 [ai-shortfilm-prompts](https://github.com/jnMetaCode/ai-shortfilm-prompts) | 🎬 影片提示詞 | Mx-Shell《喪屍清道夫》5 段式方法論 + Skill，Seedance / 小云雀 / Sora / 可靈 / 即夢通用 |
 | 🆕 [local-agent-toolkit](https://github.com/jnMetaCode/local-agent-toolkit) | 🛠️ Agent 本地三件套 | 給 agent 配上**記憶 / 技能管理 / 執行追蹤**，零依賴、資料不出本機（engram · skillet · tracelet，npx 即用） |
 | 🆕 [codepet](https://github.com/jnMetaCode/codepet) | 🐾 桌面養成桌寵 | 碼寵 CodePet —— 你寫程式碼 / 用 Claude Code，它就漲經驗、升級、換狀態、跳舞。**全本地、隱私優先、開源** |
+| 🆕 [openshorts](https://github.com/jnMetaCode/openshorts) | 🎥 短影片生產線 | 開片 —— 文案進，成片出：腳本 / 配音 / 字幕 / 成片 / 發布包一條龍，**0 元 0 key 跑通第一條**，本地優先 |
 
 ---
 
