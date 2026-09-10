@@ -22,7 +22,7 @@
 |:---:|:---:|:---:|:---:|:---:|
 | **277** | **213** | **64** | **20 種** | **20 個** |
 
-> 📖 **官方配套課程** → [AI 專家團隊實戰](https://aiolaola.com/course/ai-agency?utm_source=github&utm_campaign=agents)（33 節，免費）：手把手把這倉 277 位專家用成一支團隊——單兵點名、自動組隊、一人公司全流程，桌面端零程式碼教學。另有 [從零學會 AI 程式設計](https://aiolaola.com/?utm_source=github&utm_campaign=agents)（180 節）＋ [從零構建 AI 智能體](https://aiolaola.com/course/ai-agent?utm_source=github&utm_campaign=agents)（40 節）
+> 📖 **官方配套課程** → [AI 專家團隊實戰](https://aiolaola.com/course/ai-agency?utm_source=github&utm_campaign=agents)（35 節，免費）：手把手把這倉 277 位專家用成一支團隊——單兵點名、自動組隊、一人公司全流程，桌面端零程式碼教學。另有 [從零學會 AI 程式設計](https://aiolaola.com/?utm_source=github&utm_campaign=agents)（182 節）＋ [從零構建 AI 智能體](https://aiolaola.com/course/ai-agent?utm_source=github&utm_campaign=agents)（40 節）（站上共 13 門課、648 節，**全部 ¥0**——另有 AI 繪畫 / 寫小說 / 漫劇 / 量化 / DeepSeek / 深度專注 等）
 >
 > 🌍 Also available in [English](https://aiolaola.com/en?utm_source=github&utm_campaign=agents) · [日本語](https://aiolaola.com/ja?utm_source=github&utm_campaign=agents) · [Español](https://aiolaola.com/es?utm_source=github&utm_campaign=agents) · [한국어](https://aiolaola.com/ko?utm_source=github&utm_campaign=agents) · [繁體中文](https://aiolaola.com/zh-Hant?utm_source=github&utm_campaign=agents)
 
